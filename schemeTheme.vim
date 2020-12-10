@@ -6,6 +6,9 @@
 "guibg cambia el color del backgraund a oscuro 
 "guifg cambia el color de los aperturtas de los paretensis y signos
 
+" Referencias
+"https://phoenixnap.com/kb/vim-color-schemes
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,3 +59,9 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"---------Themes I like me (likely I need proof).
+" https://github.com/eemed/sitruuna.vim
+"
+
+"----------- Fonts 
+" https://fonts.google.com/?category=Monospace

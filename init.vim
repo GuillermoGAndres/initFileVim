@@ -53,6 +53,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 
+"*Themes
+Plug 'pgavlin/pulumi.vim'
+
 call plug#end()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -170,10 +173,12 @@ set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúscu
 
 "set background=dark  " Fondo del tema: light o dark
 
-"set termguicolors "Activa true colors en la terminal,Genera una paleta de colores diferente, haciendo como un resaltado
+set termguicolors "Activa true colors en la terminal,Genera una paleta de colores diferente, haciendo como un resaltado
 
 "-----------------------------Mappings-------------------------------------------------- 
-map <C-l> :NERDTreeToggle<CR>
+"map <C-l> :NERDTreeToggle<CR>
+map <F12> :NERDTreeToggle<CR>
+
 "map <C-b> :NERDTreeToggle<CR>
 "Entrar NORMAL mode
 imap <C-s> <ESC>
@@ -315,4 +320,15 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+
+
+" ---------- Themes --------------------
+"colorscheme pulumi
+colorscheme mountaineer-grey
+
+
+"------------ Customs --------------------
+" Toggle relative line number
+nmap <C-L><C-L> :set invrelativenumber<CR>
+
 
