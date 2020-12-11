@@ -325,8 +325,8 @@ set guioptions-=L  "remove left-hand scroll bar
 " ---------- Themes --------------------
 "colorscheme pulumi
 colorscheme mountaineer-grey
-
-
+" Change color number #ABA88B or #F0DFAF
+hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
 "------------ Customs --------------------
 " Toggle relative line number
 nmap <C-L><C-L> :set invrelativenumber<CR>

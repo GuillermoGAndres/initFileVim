@@ -24,7 +24,7 @@ C-u : undo
 ~~~
 
 ### Default font
-Cascadia Code Regular
+Droid Sans Mono
 
 ![Linked java](./img/alacrittyDroidSansMono.png)
 
