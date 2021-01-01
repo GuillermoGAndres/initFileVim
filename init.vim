@@ -55,6 +55,8 @@ Plug 'jiangmiao/auto-pairs'
 
 "*Themes
 Plug 'pgavlin/pulumi.vim'
+Plug 'embark-theme/vim', { 'as': 'embark' }
+
 
 call plug#end()
 filetype plugin indent on    " required
@@ -178,10 +180,13 @@ set termguicolors "Activa true colors en la terminal,Genera una paleta de colore
 "-----------------------------Mappings-------------------------------------------------- 
 "map <C-l> :NERDTreeToggle<CR>
 map <F12> :NERDTreeToggle<CR>
-
+map <F11> :Explore<CR>
+map <C-x><C-f> :Sexplore<CR> 
+map <C-x><C-Right> :Vexplore<CR> 
 "map <C-b> :NERDTreeToggle<CR>
 "Entrar NORMAL mode
 imap <C-s> <ESC>
+imap <C-n> <ESC>
 "imap <C-x> <ESC>
 "Guardar
 nnoremap <C-s> :w<CR> 
@@ -224,20 +229,6 @@ nnoremap <C-Right> :bnext<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap ESC to ii
 ":imap ii <Esc>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Status Line
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" The lightline.vim theme
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ }
-
-" Always show statusline
-set laststatus=2
-
-" Uncomment to prevent non-normal modes showing in powerline and below powerline.
-set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
@@ -321,14 +312,49 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
+" => Status Line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The lightline.vim theme
+"let g:lightline = {
+"      \ 'colorscheme': 'darcula',
+"      \ }
+
+" Always show statusline
+set laststatus=2
+
+" Uncomment to prevent non-normal modes showing in powerline and below powerline.
+set noshowmode
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ---------- Themes --------------------
 "colorscheme pulumi
-colorscheme mountaineer-grey
+"------------------------------ 
+"colorscheme mountaineer-grey
 " Change color number #ABA88B or #F0DFAF
-hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
+"hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
+"------------------------------ 
+colorscheme embark
+let g:lightline = {
+      \ 'colorscheme': 'embark',
+      \ }
+
+let g:embark_terminal_italics = 1
+hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#1E1C31
 "------------ Customs --------------------
 " Toggle relative line number
 nmap <C-L><C-L> :set invrelativenumber<CR>
 
+" Con esto ajusta el background de tu tema si es transparente lo respeta.
+"------------------------------ 
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+"------------------------------ 
+" Ayuda mucho cambiar tu directorio actual, sera donde se encuentre el archivo
+" que se abrira, me ha ayuda para Nerdtree 
+:set autochdir
+
+" :e filename  # Create a new file
+" m  # En NERDTree abre un menu para crear archivos.
 

@@ -25,6 +25,5 @@ C-u : undo
 
 ### Default font
 Droid Sans Mono
-
 ![Linked java](./img/alacrittyDroidSansMono.png)
 
