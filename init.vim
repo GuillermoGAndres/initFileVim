@@ -176,7 +176,8 @@ set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúscu
 
 "set background=dark  " Fondo del tema: light o dark
 
-set termguicolors "Activa true colors en la terminal,Genera una paleta de colores diferente, haciendo como un resaltado
+"Genera una paleta de colores diferente, haciendo como un resaltado
+set termguicolors "Activa true colors en la terminal utilizando guifg in vez de termfg.
 
 "-----------------------------Mappings-------------------------------------------------- 
 "map <C-l> :NERDTreeToggle<CR>
@@ -335,8 +336,8 @@ set noshowmode
 "ver colores 
 ":so $VIMRUNTIME/syntax/hitest.vim
 colorscheme mountaineer-grey
-" Change color number #ABA88B or #F0DFAF
-hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
+" Change color amarillo number #ABA88B or #F0DFAF
+hi LineNr term=bold cterm=bold ctermfg=2 guifg=#ABA88B guibg=#232322
 "------------------------------ 
 " colorscheme embark
 "let g:lightline = {
@@ -386,4 +387,15 @@ nnoremap <f6> :OpenTerminal<CR>
 source ~/.config/nvim/mystatusline.vim
 
 "------------------------ 
+"---------mytheme ----
+colorscheme liskov
 
+"---Conocer el grupo de sintaxis que pertenece----
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+"-------------------
