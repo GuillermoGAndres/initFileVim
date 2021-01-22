@@ -75,6 +75,10 @@ highlight Title              guifg=#EFFBFF    guibg=none    gui=underline
 " highlight xmlEndTag        guifg=114     guibg=none    gui=none
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" HTML highlighting 
+highlight htmlCommentPart      guifg=#EFFBFF    guibg=none    gui=italic
+highlight htmlComment          guifg=#add8e6    guibg=none    gui=none
+
 "highlight clear
 "if exists("syntax_on")
 "  syntax reset
