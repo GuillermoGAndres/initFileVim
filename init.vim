@@ -181,7 +181,7 @@ set termguicolors "Activa true colors en la terminal,Genera una paleta de colore
 "-----------------------------Mappings-------------------------------------------------- 
 "map <C-l> :NERDTreeToggle<CR>
 map <F12> :NERDTreeToggle<CR>
-map <F11> :Explore<CR>
+"map <F11> :Explore<CR>
 map <C-x><C-f> :Sexplore<CR> 
 "map <C-x><C-Right> :Vexplore<CR> 
 
@@ -375,11 +375,12 @@ function! OpenTerm()
     " startinsert lo que hacer usar 'i' insert para escribir en el buffer una
     " vez creado nuestra terminal.
     exec 'startinsert'
-    set nonumber
+    " Quitamos los numeros del buffer
+    set nonumber 
 endfunction
 
 command! -nargs=0 OpenTerminal call OpenTerm()
-autocmd FileType cpp nnoremap <f6> :OpenTerminal<CR>
+nnoremap <f6> :OpenTerminal<CR>
 
 "------ status line----------------
 source ~/.config/nvim/mystatusline.vim

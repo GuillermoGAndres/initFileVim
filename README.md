@@ -29,5 +29,5 @@ new | term      :- horizontal vertical
 
 ### Default font
 Droid Sans Mono
-![Linked java](./img/alacrittyDroidSansMono.png)
+![Linked java](./img/2LinkedQueueJava.png)
 

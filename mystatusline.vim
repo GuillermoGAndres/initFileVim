@@ -39,7 +39,8 @@ endfunction
 "ver colores 
 ":so $VIMRUNTIME/syntax/hitest.vim
 
-set statusline=\[%{&fileformat}\]
+set statusline=%#StatusLine# " Normalizando las letras de color por defecto blanco
+set statusline+=\[%{&fileformat}\]
 set statusline+=%#Special# " Color azul claro por mi tema
 set statusline+=\ %f
 set statusline+=%#Number# " Color rojo por mi tema
@@ -47,7 +48,7 @@ set statusline+=%{StatuslineGit()}
 set statusline+=%#String# " Color verde claro por mi tema
 set statusline+=%m
 
-set statusline+=%#CursorLineNr# " Normalizando las letras de color por defecto blanco
+set statusline+=%#StatusLine# " Normalizando las letras de color por defecto blanco
 set statusline+=%=
 
 set statusline+=\%y
