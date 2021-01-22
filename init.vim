@@ -27,7 +27,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 "Plug 'gmarik/Vundle.vim'                           " Vundle
 
 "{{ The Basics }}
-    Plug 'itchyny/lightline.vim'                       " Lightline statusbar
+    " Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
 "{{ File management }}
@@ -46,7 +46,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
     Plug 'vim-python/python-syntax'                    " Python highlighting
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
-    Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
+    " Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
     Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
 "{{ Development } }
@@ -54,8 +54,8 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 
 "*Themes
-Plug 'pgavlin/pulumi.vim'
-Plug 'embark-theme/vim', { 'as': 'embark' }
+"Plug 'pgavlin/pulumi.vim'
+"Plug 'embark-theme/vim', { 'as': 'embark' }
 
 
 call plug#end()
@@ -80,7 +80,7 @@ endfunction
 
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+     \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
 "Para puedas visualizar las opciones en cualquier lugar de la palabra
@@ -158,6 +158,7 @@ set shiftround
 set hidden  " Permitir cambiar de buffers sin tener que guardarlos
 
 set mouse=a " enable mouse support (might not work well on Mac OS X), para cambiarme de ventanas
+" https://unix.stackexchange.com/questions/139578/copy-paste-for-vim-is-not-working-when-mouse-set-mouse-a-is-on
 
 "set title  " Muestra el nombre del archivo en la ventana de la terminal
 
@@ -182,7 +183,8 @@ set termguicolors "Activa true colors en la terminal,Genera una paleta de colore
 map <F12> :NERDTreeToggle<CR>
 map <F11> :Explore<CR>
 map <C-x><C-f> :Sexplore<CR> 
-map <C-x><C-Right> :Vexplore<CR> 
+"map <C-x><C-Right> :Vexplore<CR> 
+
 "map <C-b> :NERDTreeToggle<CR>
 "Entrar NORMAL mode
 imap <C-s> <ESC>
@@ -198,6 +200,7 @@ nmap <C-c> :q<CR>
 "Salir foruce brute
 "nmap <C-c> :q!<CR>
 
+"Definir la letra leader
 let g:mapleader = ' '  " Definir espacio como la tecla líder
 " https://stsewd.dev/es/posts/neovim-installation-configuration/
 "Guardar con <líder> + s
@@ -205,17 +208,11 @@ let g:mapleader = ' '  " Definir espacio como la tecla líder
 "nnoremap <leader>x :q!<CR>
 nnoremap <leader>c :q!<CR>
 
-" Moverse entre buffers
-nnoremap <C-Left> :bprevious<CR>
-nnoremap <C-Right> :bnext<CR>
-
-"Configurando el movimiento de los tab para sea mas facil en vez de utilar gt 
-"nnoremap <C-Left> :tabprevious<CR>                                                                            
-"nnoremap <C-Right> :tabnext<CR>
-"nnoremap <C-j> :tabprevious<CR>                                                                            
-"nnoremap <C-k> :tabnext<CR>
-
-"Definir la letra leader
+"----- Management buffers ------------
+nnoremap <C-x><Left> :bprevious<CR>
+nnoremap <C-x><Right> :bnext<CR>
+"nnoremap <C-x><Up> :ls<CR> " Al paracer no funcino con Up y Down
+nnoremap <S-Up> :ls<CR>
 
 " Moverse al buffer siguiente con <líder> + l
 "nnoremap <leader>l :bnext<CR>
@@ -224,6 +221,16 @@ nnoremap <C-Right> :bnext<CR>
 " Cerrar el buffer actual con <líder> + q
 "nnoremap <leader>q :bdelete<CR>
 "noremap <Leader>y "*y -
+
+"--------Management tab ----------
+"nnoremap <C-x><C-Left> :tabp<CR>                                                                            
+nnoremap <C-x><C-Right> :tabnext<CR>
+
+"Configurando el movimiento de los tab para sea mas facil en vez de utilar gt 
+"nnoremap <C-Left> :tabprevious<CR>                                                                            
+"nnoremap <C-Right> :tabnext<CR>
+"nnoremap <C-j> :tabprevious<CR>                                                                            
+"nnoremap <C-k> :tabnext<CR>
 
 " => Remap Keys
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -272,8 +279,8 @@ map <Leader>tt :vnew term://fish<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse Scrolling
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set mouse=nicr
+" Esto no me dejaba seleccion con mi mouse por esta desactivado
+"set mouse=nicr
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
@@ -319,28 +326,25 @@ set guioptions-=L  "remove left-hand scroll bar
 "      \ 'colorscheme': 'darcula',
 "      \ }
 
-" Always show statusline
-set laststatus=2
+
 
 " Uncomment to prevent non-normal modes showing in powerline and below powerline.
 set noshowmode
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " ---------- Themes --------------------
 "colorscheme pulumi
-"------------------------------ 
-"colorscheme mountaineer-grey
+"ver colores 
+":so $VIMRUNTIME/syntax/hitest.vim
+colorscheme mountaineer-grey
 " Change color number #ABA88B or #F0DFAF
-"hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
+hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#232322
 "------------------------------ 
-colorscheme embark
-let g:lightline = {
-      \ 'colorscheme': 'embark',
-      \ }
+" colorscheme embark
+"let g:lightline = {
+"      \ 'colorscheme': 'embark',
+"      \ }
 
-let g:embark_terminal_italics = 1
-hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#1E1C31
+" let g:embark_terminal_italics = 1
+" hi LineNr term=bold cterm=bold ctermfg=2 guifg=#F0DFAF guibg=#1E1C31
 "------------ Customs --------------------
 " Toggle relative line number
 nmap <C-L><C-L> :set invrelativenumber<CR>
@@ -352,9 +356,33 @@ highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 "------------------------------ 
 " Ayuda mucho cambiar tu directorio actual, sera donde se encuentre el archivo
-" que se abrira, me ha ayuda para Nerdtree 
+" que se abrira, me ha ayuda para Nerdtree, cuando se untiliza vim
+" ruta/archivo.cpp ese ahora sera tu directorio actual. 
 :set autochdir
 
 " :e filename  # Create a new file
 " m  # En NERDTree abre un menu para crear archivos.
+
+
+"----------PLugin for compile and run C++ pragrams. ----------------
+source ~/.config/nvim/myPlugins/cp.vim
+let g:split_term_style = 'horizontal'
+"let g:split_term_resize_cmd = 'resize 2'
+
+"------------Open term-----------------
+function! OpenTerm() 
+    exec 'new | term'
+    " startinsert lo que hacer usar 'i' insert para escribir en el buffer una
+    " vez creado nuestra terminal.
+    exec 'startinsert'
+    set nonumber
+endfunction
+
+command! -nargs=0 OpenTerminal call OpenTerm()
+autocmd FileType cpp nnoremap <f6> :OpenTerminal<CR>
+
+"------ status line----------------
+source ~/.config/nvim/mystatusline.vim
+
+"------------------------ 
 

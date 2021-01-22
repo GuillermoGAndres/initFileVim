@@ -21,6 +21,10 @@ y : copy
 d : cut
 p : paste
 C-u : undo
+
+Term
+vnew | term     :- terminal vertical
+new | term      :- horizontal vertical
 ~~~
 
 ### Default font
