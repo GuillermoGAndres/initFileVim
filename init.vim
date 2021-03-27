@@ -115,7 +115,7 @@ set nobackup                    " No auto backups
 set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 "set number relativenumber       " Display line numbers
-set number
+"set number
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 syntax enable
 let g:rehash256 = 1
@@ -127,7 +127,7 @@ let g:rehash256 = 1
 ":set rnu!   " toggle relative numbering off
 
 "set number relativenumber
-set number                     " Show current line number
+"set number                     " Show current line number
 
 "set relativenumber             " Show relative line numbers
 
@@ -335,9 +335,9 @@ set noshowmode
 "colorscheme pulumi
 "ver colores 
 ":so $VIMRUNTIME/syntax/hitest.vim
-colorscheme mountaineer-grey
+" colorscheme mountaineer-grey
 " Change color amarillo number #ABA88B or #F0DFAF
-hi LineNr term=bold cterm=bold ctermfg=2 guifg=#ABA88B guibg=#232322
+"hi LineNr term=bold cterm=bold ctermfg=2 guifg=#ABA88B guibg=#232322
 "------------------------------ 
 " colorscheme embark
 "let g:lightline = {
@@ -384,11 +384,11 @@ command! -nargs=0 OpenTerminal call OpenTerm()
 nnoremap <f6> :OpenTerminal<CR>
 
 "------ status line----------------
-source ~/.config/nvim/mystatusline.vim
+"source ~/.config/nvim/mystatusline.vim
 
 "------------------------ 
 "---------mytheme ----
-colorscheme liskov
+"colorscheme liskov
 
 "---Conocer el grupo de sintaxis que pertenece----
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -399,3 +399,5 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 "-------------------
+colorscheme af
+"set cursorline

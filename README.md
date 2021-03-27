@@ -8,6 +8,11 @@ El archivo init de vim, el cual es el que es ejecutado cuando se inicia vim por 
 ~/.config/nvim/init.vim
 ~~~
 
+Para instalar los plugins primero necesitas descargar vim-plug:
+![Pagina de vimplug](https://github.com/junegunn/vim-plug)
+Para el plugin de coc.vim necesitas instalar nodejs:
+![Pagina de coc.vim](https://github.com/neoclide/coc.nvim)
+
 # Guide vim
 ~~~
 q: quit
