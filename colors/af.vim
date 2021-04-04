@@ -20,13 +20,20 @@ hi User2 guibg=darkblue guifg=lightblue
 hi User3 guibg=darkblue guifg=red
 hi User4 guibg=darkblue guifg=cyan
 hi User5 guibg=darkblue guifg=lightgreen
+
 "set statusline=%<%1*===\ %5*%f%1*%(\ ===\ %4*%h%1*%)%(\ ===\ %4*%m%1*%)%(\ ===\ %4*%r%1*%)\ ===%====\ %2*%b(0x%B)%1*\ ===\ %3*%l,%c%V%1*\ ===\ %5*%P%1*\ ===%0* laststatus=2
-set statusline=%<%8*===\ %8*%f%8*%(\ ===\ %8*%h%8*%)%(\ ===\ %8*%m%8*%)%(\ ===\ %8*%r%8*%)\ ===%====\ %8*%b(0x%B)%8*\ ===\ %8*%l,%c%V%8*\ ===\ %8*%P%8*\ ===%0* laststatus=2
+"set statusline=%<%8*===\ %8*%f%8*%(\ ===\ %8*%h%8*%)%(\ ===\ %8*%m%8*%)%(\ ===\ %8*%r%8*%)\ ===%====\ %8*%b(0x%B)%8*\ ===\ %8*%l,%c%V%8*\ ===\ %8*%P%8*\ ===%0* laststatus=2
+"set statusline=%<%8*\ %8*%f%8*%(\ \ %8*%h%8*%)%(\ \ %8*%m%8*%)%(\ \ %8*%r%8*%)\ %=\ %8*%b(0x%B)%8*\ \ %8*%l,%c%V%8*\ \ %8*%P%8*\ %0* laststatus=2
+set statusline=%<%8*\ %8*%f%8*%(\ \ %8*%h%8*%)%(\ \ %8*%m%8*%)%(\ \ %8*%r%8*%)\ %=\ %8*\ \ %8*%l,%c%V%8*\ \ %8*%P%8*\ %0* laststatus=2
 
-"Numbers
-highlight LineNr     ctermfg=9 ctermbg=NONE guifg=#fff7bb gui=bold
+"Numbers 
+"amarillas:
+"highlight LineNr     ctermfg=9 ctermbg=NONE guifg=#fff7bb gui=NONE
+"grises
+highlight LineNr     ctermfg=9 ctermbg=NONE guifg=#7a7a7a gui=NONE
 
-hi Normal		guifg=#F6F3E8	guibg=#000000 gui=bold
+
+hi Normal		guifg=#F6F3E8	guibg=NONE gui=NONE
 "hi Normal		guifg=#dfdfdf	guibg=#000000
 
 "hi Normal		guifg=#87dee0	guibg=#000000
@@ -42,7 +49,8 @@ hi String		guifg=lightred
 hi Character	guifg=#87cee0
 
 "hi Statement	guifg=khaki
-hi Statement guifg=#fff7bb gui=bold
+"hi Statement guifg=#fff7bb gui=bold
+hi Statement guifg=#fff7bb gui=NONE
 
 
 "hi PreProc		guifg=#ff99a4 gui=bold
@@ -50,7 +58,7 @@ hi PreProc		guifg=salmon
 
 "hi Type			term=bold cterm=bold gui=bold guifg=lightgreen					gui=none
 "hi Type			guifg=#b9f7c2 gui=bold
-hi Type			guifg=#b9f7c2
+hi Type			guifg=#b9f7c2 gui=NONE
 
 hi Todo			guifg=orangered	guibg=yellow2
 hi Special		guifg=Orange
@@ -64,7 +72,10 @@ hi Folded		guibg=grey30	guifg=gold
 hi FoldColumn	guibg=grey30	guifg=tan
 hi ModeMsg		guifg=goldenrod
 hi MoreMsg		guifg=SeaGreen
-hi NonText		guifg=LightBlue	guibg=#000000
+
+" Es la parte donde no hay texto todavia, donde aparece los ~.
+hi NonText		guifg=LightBlue	guibg=NONE
+
 hi Question		guifg=springgreen
 hi SpecialKey	guifg=yellowgreen
 hi StatusLineNC	guibg=#c2bfa5	guifg=grey50		gui=none
@@ -111,13 +122,26 @@ hi Ignore	 cterm=bold ctermfg=7
 hi Error	 cterm=bold ctermfg=7 ctermbg=1
 
 " HTML-----
-hi htmlString guifg=lightred gui=bold
-hi htmlArg guifg=#b9f7c2 gui=bold
-hi htmlTagName guifg=#fff7bb gui=bold
 "doctype
-highlight htmlComment          guifg=#8dd6f0    gui=bold
+highlight htmlComment          guifg=#8dd6f0    gui=NONE
+"highlight htmlComment          guifg=#8dd6f0    gui=bold
 "highlight htmlComment          guifg=#add8e6    gui=bold
-highlight Title          guifg=#fb6f7f   gui=bold
+
+"highlight Title          guifg=#fb6f7f   gui=bold
+"highlight Title          guifg=#fb6f7f   gui=NONE
+highlight Title          guifg=salmon   gui=underline
+
+"hi htmlString guifg=lightred gui=bold
+hi htmlString guifg=lightred gui=NONE
+
+"hi htmlArg guifg=#b9f7c2 gui=bold
+hi htmlArg guifg=#b9f7c2 gui=NONE
+
+hi htmlTagName guifg=#fff7bb gui=NONE
+"hi htmlTagName guifg=#fff7bb gui=bold
+
+
+"---------------------------------------------
 
 " cursor color numbers
 "au CursorMoved * exe "highlight CursorLineNr guibg=#" . printf('%02x%02x%02x', 90 + line('.') * (255 - 90) / line('$'), 255 - line('.') * (255 - 90) / line('$'), 90)

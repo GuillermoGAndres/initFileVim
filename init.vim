@@ -349,6 +349,7 @@ set noshowmode
 "------------ Customs --------------------
 " Toggle relative line number
 nmap <C-L><C-L> :set invrelativenumber<CR>
+nmap <f9> :set nu!<CR>
 
 " Con esto ajusta el background de tu tema si es transparente lo respeta.
 "------------------------------ 
