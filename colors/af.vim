@@ -140,18 +140,27 @@ hi htmlArg guifg=#b9f7c2 gui=NONE
 hi htmlTagName guifg=#fff7bb gui=NONE
 "hi htmlTagName guifg=#fff7bb gui=bold
 
-
 "---------------------------------------------
 
 " cursor color numbers
 "au CursorMoved * exe "highlight CursorLineNr guibg=#" . printf('%02x%02x%02x', 90 + line('.') * (255 - 90) / line('$'), 255 - line('.') * (255 - 90) / line('$'), 90)
 "hi CursorLineNr   term=bold gui=bold guifg=black
 
-hi CursorLineNr   term=bold gui=bold guifg=black guibg=#f5645a
+"hi CursorLineNr   term=bold gui=bold guifg=black guibg=#f5645a
+"hi CursorLine     guifg=none            guibg=NONE
 "hi CursorLineNr   term=bold gui=bold guifg=red
 
-hi CursorLine     guifg=none            guibg=NONE
+" Para background oscuro
+hi CursorLineNr   term=bold gui=underline guifg=NONE guibg=#201f20
+hi CursorLine     guifg=none guibg=#201f20
+
+"hi CursorLineNr   term=bold gui=NONE guifg=NONE guibg=NONE
+"hi CursorLine     guifg=none gui=underline guibg=#252425
+
+" https://stackoverflow.com/questions/8640276/how-do-i-change-my-vim-highlight-line-to-not-be-an-underline
 " :set cursorline
+" ---------- python --------------------------------
+highlight pythonSpaceError          guibg=#3c3f42   gui=NONE
 
 
 "vim: sw=4

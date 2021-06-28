@@ -52,6 +52,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 "{{ Development } }
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'terryma/vim-expand-region'
+
 
 "*Themes
 "Plug 'pgavlin/pulumi.vim'
@@ -115,7 +117,7 @@ set nobackup                    " No auto backups
 set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 "set number relativenumber       " Display line numbers
-"set number
+set number
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 syntax enable
 let g:rehash256 = 1
@@ -193,13 +195,24 @@ imap <C-n> <ESC>
 "imap <C-x> <ESC>
 "Guardar
 nnoremap <C-s> :w<CR> 
+" Quit discarding changes
+" inoremap <C-q> <esc>:qa!<cr>               
+nnoremap zz :q<cr>
+" La 'a' significa all buffers 
+nnoremap zq :qa!<cr>
+
 "nnoremap <C-x> :w<CR>
 "Salir sin guardad
 "nmap <C-x> :q<CR>
-nmap <C-c> :q<CR>
+
+" nmap <C-c> :q<CR>
+
 "nmap <C-x><C-c> :q!<CR>
 "Salir foruce brute
 "nmap <C-c> :q!<CR>
+
+inoremap jk <esc>
+"------------------------------  
 
 "Definir la letra leader
 let g:mapleader = ' '  " Definir espacio como la tecla líder
@@ -208,19 +221,25 @@ let g:mapleader = ' '  " Definir espacio como la tecla líder
 "nnoremap <leader>s :w<CR> 
 "nnoremap <leader>x :q!<CR>
 nnoremap <leader>c :q!<CR>
+nnoremap <leader>w :w<CR>
 
 "----- Management buffers ------------
 nnoremap <C-x><Left> :bprevious<CR>
 nnoremap <C-x><Right> :bnext<CR>
+
+nnoremap <C-x>l :bnext<CR>
+nnoremap <C-x>h :bprevious<CR>
+
 "nnoremap <C-x><Up> :ls<CR> " Al paracer no funcino con Up y Down
 nnoremap <S-Up> :ls<CR>
 
 " Moverse al buffer siguiente con <líder> + l
-"nnoremap <leader>l :bnext<CR>
+nnoremap <leader>l :bnext<CR>
 " Moverse al buffer anterior con <líder> + j
-"nnoremap <leader>j :bprevious<CR>
+nnoremap <leader>h :bprevious<CR>
 " Cerrar el buffer actual con <líder> + q
-"nnoremap <leader>q :bdelete<CR>
+nnoremap <leader>q :bdelete<CR>
+
 "noremap <Leader>y "*y -
 
 "--------Management tab ----------
@@ -401,4 +420,23 @@ function! <SID>SynStack()
 endfunc
 "-------------------
 colorscheme af
-"set cursorline
+set cursorline
+
+" Vim auto line-break
+set textwidth=79
+" https://stackoverflow.com/questions/9131271/vim-auto-line-break
+" https://stackoverflow.com/questions/4027222/using-shorter-textwidth-in-comments-and-docstrings
+" https://vi.stackexchange.com/questions/4796/automatically-breaking-lines-in-comments
+
+" Wrap lines, eg for markdown or text 
+"set wrap 
+"set wrap! " Para negarlo
+
+" Muticursor
+" /word , later write cgn in mode visual, and leter . dot
+" https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
+" http://vimcasts.org/episodes/operating-on-search-matches-using-gn/
+
+
+
+
