@@ -1,0 +1,1 @@
+/home/guillermo/Documents/projects/themes-for-vim/simple-dark/simple-dark.vim

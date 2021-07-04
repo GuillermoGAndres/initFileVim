@@ -8,6 +8,7 @@
 
 " Referencias
 "https://phoenixnap.com/kb/vim-color-schemes
+"https://vi.stackexchange.com/questions/2782/how-can-i-create-my-own-colorscheme
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming

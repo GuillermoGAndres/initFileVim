@@ -1,0 +1,6 @@
+List of fonts:
+1.- Cascadia Code
+2.- Jetbrains Mono
+3.- Liberation Mono
+
+

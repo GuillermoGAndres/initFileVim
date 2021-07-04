@@ -53,7 +53,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-expand-region'
-
+Plug 'tpope/vim-commentary'
 
 "*Themes
 "Plug 'pgavlin/pulumi.vim'
@@ -419,7 +419,8 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 "-------------------
-colorscheme af
+" colorscheme af
+colorscheme simple-dark
 set cursorline
 
 " Vim auto line-break
@@ -437,6 +438,12 @@ set textwidth=79
 " https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
 " http://vimcasts.org/episodes/operating-on-search-matches-using-gn/
 
+noremap <leader>/ :Commentary<CR>
 
-
+" Describe key like emacs :h yourkey
+" https://stackoverflow.com/questions/5059283/emacs-describe-key-in-vim
+"
+" Format all file, also you can autoindent current line liki == or x= 
+" https://vim.fandom.com/wiki/Fix_indentation
+map <F7> gg=G<C-o>
 
