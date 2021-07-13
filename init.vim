@@ -485,5 +485,8 @@ endfunction
 autocmd FileType html imap <buffer><silent><expr><tab> <sid>zen_html_tab()
 " http://bling.github.io/blog/2013/07/21/smart-tab-expansions-in-vim-with-expression-mappings/
 
+"Enable just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 

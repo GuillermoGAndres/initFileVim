@@ -1,0 +1,35 @@
+
+
+La carpeta donde se encuentra las sintaxis de los lenguajes se encuentra:
+/usr/share/nvim/runtime/syntax
+
+Para el lenguaje C++, queria que la keyword string tuviera color, entonces
+modifique el archivo:
+/usr/share/nvim/runtime/syntax/cpp.vim 
+
+Y agregue la linea:
+syn keyword cType		string
+
+Con esto pude agregar color de tipo cType a los string.
+
+
+Segun la ubicacion local deberia ser esta:
+~/.vim/syntax/cpp.vim
+
+crear el archivo si no existe, pero a mi no me funciono y mejor lo edite
+desde el codigo fuente:
+/usr/share/nvim/runtime/syntax/cpp.vim 
+
+Referencias
+https://www.reddit.com/r/vim/comments/fwc84q/syntax_highlighting_for_userdefined_types_in_c/
+https://stackoverflow.com/questions/54685249/in-vim-how-to-highlight-the-user-defined-data-type
+https://github.com/vim/vim/blob/master/runtime/syntax/cpp.vim
+https://stackoverflow.com/questions/25602705/vim-in-c-highlight-struct-name-as-ctype
+https://stackoverflow.com/questions/22674375/how-to-exclude-c-raw-string-literals-from-syntax-highlighting-in-vim
+https://vim.fandom.com/wiki/Creating_your_own_syntax_files#Install_the_syntax_file
+https://vim.fandom.com/wiki/Syntax_folding_of_Vim_scripts
+
+Tambien ver:
+help :syn-keyword
+help :hi-link
+:syntax list // Para ver la sintaxis de las keyword
