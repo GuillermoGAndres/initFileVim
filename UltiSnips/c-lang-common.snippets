@@ -1,0 +1,35 @@
+# Common language for C/C++
+snippet main "Main function without argvs"
+int main(){
+	$0
+	return 0;
+}
+endsnippet
+
+snippet main_arg "Main function with argvs"
+int main(int argc, char *argv[]){
+	$0
+	return 0;
+}
+endsnippet
+
+
+snippet struct "Struct structure" 
+struct ${1:name} {
+	$0
+};
+endsnippet
+
+
+
+snippet fun "Function" b
+${1:void} ${2:function_name}($3) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fund "function declaration" b
+${1:void} ${2:function_name}($3);
+endsnippet
+
+

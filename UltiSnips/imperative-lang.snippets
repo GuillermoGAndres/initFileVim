@@ -1,0 +1,59 @@
+
+# Todos los lenguajes imperativos por lo menos tendran estas estructuras en
+# comun.
+snippet doc "Documentation function" 
+/**
+* $0
+*/
+endsnippet
+
+snippet fori "For each" 
+for (${1:Object} ${2:x} : ${3:iterator}) {
+	$0
+}
+endsnippet
+
+snippet if "if control structure" 
+if (${1:condition}) {
+	$0
+}
+endsnippet
+
+snippet switch "switch control structure" 
+switch (${1:expr}) {
+case ${2:num}:
+	$0
+	break;
+default:
+	break;
+}
+endsnippet
+
+
+snippet while "while control structure" 
+while (${1:condition}) {
+	$0
+}
+endsnippet
+
+# Este es mas especifico
+snippet for "for loop(for)"
+for (${1:int} ${2:i} = 0; $2 ${4:<} ${3:n}; $2${5:++}) {
+	$0
+}
+endsnippet
+
+# snippet for "for loop(for)"
+# for (${1:int} ${2:i = 0}; ${3:i < n}; ${4:i++}) {
+# 	$0
+# }
+# endsnippet
+
+
+# Example para mirror y que se rompa una terminada la palabra
+# snippet main "Main function without argvs"
+# int main() {
+# 	${1:thing}	
+# 	return ${1/(\w*).*/$1/};
+# }
+# endsnippet

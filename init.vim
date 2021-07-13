@@ -54,6 +54,9 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
+" Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
 
 "*Themes
 "Plug 'pgavlin/pulumi.vim'
@@ -446,4 +449,41 @@ noremap <leader>/ :Commentary<CR>
 " Format all file, also you can autoindent current line liki == or x= 
 " https://vim.fandom.com/wiki/Fix_indentation
 map <F7> gg=G<C-o>
+
+
+" Key 
+" C (left/right) - Ajusta la ventanas
+" vim - Visual mode , selecciona una palabra
+
+" UltiSnips 
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" For emmet-vim 
+" Con esto se podra activar con ',,' trigger emmet
+" let g:user_emmet_leader_key=',' 
+
+" Segunda forma con la tecla tab para archivos html
+function! s:zen_html_tab()
+  return "\<c-y>,"
+endfunction
+
+" Con esto no deja que active emmet adentro de un elemento
+" function! s:zen_html_tab()
+"   let line = getline('.')
+"   if match(line, '<.*>') >= 0
+"     return "\<c-y>n"
+"   endif
+"   return "\<c-y>,"
+" endfunction
+
+autocmd FileType html imap <buffer><silent><expr><tab> <sid>zen_html_tab()
+" http://bling.github.io/blog/2013/07/21/smart-tab-expansions-in-vim-with-expression-mappings/
+
+
 

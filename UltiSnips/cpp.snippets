@@ -1,0 +1,48 @@
+extends imperative-lang
+extends c-lang-common
+
+snippet main_ "Comon structure main" 
+#include <${1:bits/stdc++.h}> //importa todo
+
+using namespace std;
+
+int main() {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet _main "Template competitive programming" 
+#pragma GCC optimize("Ofast")
+#include <bits/stdc++.h>
+using namespace std;
+// defines
+#define rep(i,a,b) for(int i = a; i < b; ++i)
+#define invrep(i,b,a) for(int i = b; i >= a; --i)
+#define umap unordered_map
+#define uset unordered_set
+#define ff first
+#define ss second
+// typedefs
+typedef pair<int,int> ii;
+typedef unsigned long long int ull;
+typedef long long int ll;
+// -------------------------------
+int main() {
+	ios::sync_with_stdio(false); 
+	cin.tie(0);
+	$0
+	return 0;
+}
+endsnippet
+
+snippet cout "Basic cout template" 
+cout << "$0" << endl;
+endsnippet
+
+
+snippet coutv "Describe value variable" 
+cout << "${1:var} : " << $1 << endl;
+endsnippet
+
+
