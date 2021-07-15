@@ -108,6 +108,73 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 "Close the preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+
+" Extensiones instaladas
+" CocInstall coc-html coc-css coc-tsserver coc-phpls coc-snippets coc-clangd 
+" (primero debes de instalar clangd, debe estar en tu path)
+" Se guardan en la ruta: 
+" ~/.config/coc/extensions/node_modules/coc-html
+
+" https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions  (checar por
+" si quieres deshabilitar una extension)
+" https://langserver.org/    (Pagina donde hay los language server for any
+" editor)
 "--------------------------------------------------------------------------
 
 " => General Settings
@@ -457,8 +524,8 @@ map <F7> gg=G<C-o>
 
 " UltiSnips 
 let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " If you want :UltiSnipsEdit to split your window.
@@ -466,12 +533,12 @@ let g:UltiSnipsEditSplit="vertical"
 
 " For emmet-vim 
 " Con esto se podra activar con ',,' trigger emmet
-" let g:user_emmet_leader_key=',' 
+let g:user_emmet_leader_key=',' 
 
 " Segunda forma con la tecla tab para archivos html
-function! s:zen_html_tab()
-  return "\<c-y>,"
-endfunction
+" function! s:zen_html_tab()
+"   return "\<c-y>,"
+" endfunction
 
 " Con esto no deja que active emmet adentro de un elemento
 " function! s:zen_html_tab()
@@ -482,11 +549,12 @@ endfunction
 "   return "\<c-y>,"
 " endfunction
 
-autocmd FileType html imap <buffer><silent><expr><tab> <sid>zen_html_tab()
+" autocmd FileType html imap <buffer><silent><expr><tab> <sid>zen_html_tab()
 " http://bling.github.io/blog/2013/07/21/smart-tab-expansions-in-vim-with-expression-mappings/
 
 "Enable just for html/css
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,php EmmetInstall
+
 
 
