@@ -234,7 +234,7 @@ set mouse=a " enable mouse support (might not work well on Mac OS X), para cambi
 
 "set title  " Muestra el nombre del archivo en la ventana de la terminal
 
-set nowrap  " No dividir la línea si es muy larga
+"set nowrap  " No dividir la línea si es muy larga
 
 "set cursorline  " Resalta la línea actual
 
@@ -500,7 +500,7 @@ set textwidth=79
 " https://vi.stackexchange.com/questions/4796/automatically-breaking-lines-in-comments
 
 " Wrap lines, eg for markdown or text 
-"set wrap 
+set wrap 
 "set wrap! " Para negarlo
 
 " Muticursor
@@ -556,5 +556,16 @@ let g:user_emmet_leader_key=','
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php EmmetInstall
 
+"This unsets the "last search pattern" register by hitting return
+" nnoremap <CR> :noh<CR><CR>
+
+" Clear highlighting on escape in normal mode
+" nnoremap <esc> :noh<return><esc>
+" nnoremap <esc>^[ <esc>^[
+
+" nnoremap <silent> <Esc><Esc> :let @/=""<CR>
+" http://vimdoc.sourceforge.net/htmldoc/pattern.html#last-pattern
+" nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+nnoremap <Esc><Esc> :noh<CR>
 
 
