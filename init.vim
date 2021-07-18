@@ -147,7 +147,7 @@ nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <space>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
@@ -234,7 +234,7 @@ set mouse=a " enable mouse support (might not work well on Mac OS X), para cambi
 
 "set title  " Muestra el nombre del archivo en la ventana de la terminal
 
-"set nowrap  " No dividir la línea si es muy larga
+set nowrap  " No dividir la línea si es muy larga
 
 "set cursorline  " Resalta la línea actual
 
@@ -490,7 +490,8 @@ function! <SID>SynStack()
 endfunc
 "-------------------
 " colorscheme af
-colorscheme simple-dark
+" colorscheme simple-dark
+colorscheme church
 set cursorline
 
 " Vim auto line-break
@@ -500,7 +501,7 @@ set textwidth=79
 " https://vi.stackexchange.com/questions/4796/automatically-breaking-lines-in-comments
 
 " Wrap lines, eg for markdown or text 
-set wrap 
+"set wrap 
 "set wrap! " Para negarlo
 
 " Muticursor
@@ -567,5 +568,18 @@ autocmd FileType html,css,php EmmetInstall
 " http://vimdoc.sourceforge.net/htmldoc/pattern.html#last-pattern
 " nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 nnoremap <Esc><Esc> :noh<CR>
+
+" Para seleccionar el conent de una etiqueta
+" vit, con viw seleccionar una word, usando c operator delete e insert
+"https://superuser.com/questions/182355/how-can-i-select-an-html-tags-content-in-vim
+
+" Move line up and down 
+" https://vim.fandom.com/wiki/Moving_lines_up_or_down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 

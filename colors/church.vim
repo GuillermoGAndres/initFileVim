@@ -12,12 +12,33 @@
 " C: http://imgur.com/K5G5V.png
 " Javascript with nerdtree: http://imgur.com/lSXx2.png
 " Ruby with tagbar: http://imgur.com/NzPwu.png
-"
+
+" -----------------------------------------------------------------------------
+" Name:         Church theme for vim
+" Description:  A Dark Vim Colorscheme
+" Author:       Guillermo Andres <memocampeon35@gmail.com>
+" Website:      https://github.com/GuillermoGAndres
+" License:      
+" -----------------------------------------------------------------------------
 " Installation:
 " Copy the file to your vim colors directory and then do :color simple-dark.
+
+" -----------------------------------------------------------------------------
+" GUI color definitions
+":so $VIMRUNTIME/syntax/hitest.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Theming
+" Example
+"hi LineNr term=bold cterm=bold ctermfg=2 gui=bold guifg=#ABA88B guibg=#232322
+
+" Si es ajustado += set termguicolors , la terminal se convierte como si fuera
+" gui y utiliza los cores guibg or guifg, sino estara en set notermguicolors y 
+" usara los de term.
 "
-" Author: Zefei Xuan <zefei.xuan@gmail.com>
-"
+" guifg or guibg += puede especificar mas de 256 colores con nomenclatura #F3EFDE
+" cterm += solo puede utilizar 8, 16, 256 colores. https://jonasjacek.github.io/colors/
+" term y gui += underline, bold, normal, italic.
 
 if !(&t_Co == 256 || has('gui_running'))
   finish
@@ -28,17 +49,19 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name="simple-dark"
+let colors_name="church"
 set background=dark
 
 " General Colors
-hi Normal       guifg=#d7d7d7   guibg=#262626   ctermfg=251    ctermbg=235       gui=none      cterm=none
-hi Comment      guifg=#8a8a8a   guibg=NONE      ctermfg=245    ctermbg=NONE      gui=none      cterm=none
-hi Constant     guifg=#d7d7af   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
-hi Identifier   guifg=#afd7d7   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
-hi Statement    guifg=#87afd7   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
+" #1B1C1F or #1d1e21
+hi Normal       guifg=#d7d7d7   guibg=#1d1e21  ctermfg=251    ctermbg=235       gui=none      cterm=none
+hi Comment      guifg=#8b8988   guibg=NONE      ctermfg=245    ctermbg=NONE      gui=italic      cterm=none
+hi Constant     guifg=#edb0a0   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
+" #add8e6 or #93CFE3   
+hi Statement    guifg=#93CFE3   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
 hi PreProc      guifg=#87afd7   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
-hi Type         guifg=#afd7d7   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
+hi Type         guifg=#fff4cc   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
+hi Identifier   guifg=#afd7d7   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
 hi Special      guifg=#d7d7af   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
 
 " Text Markup
@@ -53,17 +76,18 @@ hi Title        guifg=#d7d7af   guibg=NONE      ctermfg=187    ctermbg=NONE     
 " Text Selection
 hi Cursor       guifg=bg        guibg=fg        ctermfg=bg     ctermbg=fg        gui=none      cterm=none
 hi CursorIM     guifg=bg        guibg=fg        ctermfg=bg     ctermbg=fg        gui=none      cterm=none
-hi CursorColumn guifg=NONE      guibg=#3c3f42   ctermfg=NONE   ctermbg=238       gui=none      cterm=none
-hi CursorLine   guifg=NONE      guibg=#3c3f42   ctermfg=NONE   ctermbg=238       gui=none      cterm=none
+hi CursorColumn guifg=NONE      guibg=#2b2b2b   ctermfg=NONE   ctermbg=238       gui=none      cterm=none
+hi CursorLine   guifg=NONE      guibg=#2b2b2b   ctermfg=NONE   ctermbg=238       gui=none      cterm=none
 " hi Visual       guifg=NONE      guibg=#005f87   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
-hi Visual       guifg=NONE      guibg=#555555   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
+hi Visual       guifg=NONE      guibg=#3c3f42   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
 hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
 hi IncSearch    guifg=bg        guibg=#87d7ff   ctermfg=bg     ctermbg=123       gui=none      cterm=none
 hi Search       guifg=bg        guibg=#ffd787   ctermfg=bg     ctermbg=221       gui=none      cterm=none
 
 " UI
-hi LineNr       guifg=#555555   guibg=#262626   ctermfg=238    ctermbg=233       gui=none      cterm=none
-hi CursorLineNr guifg=#afafaf   guibg=#444444   ctermfg=245    ctermbg=bg        gui=none      cterm=none
+hi LineNr       guifg=#656666   guibg=bg   ctermfg=238    ctermbg=233       gui=none      cterm=none
+"hi LineNr       guifg=#555555   guibg=bg   ctermfg=238    ctermbg=233       gui=none      cterm=none
+hi CursorLineNr guifg=#afafaf   guibg=#2b2b2b   ctermfg=245    ctermbg=bg        gui=none      cterm=none
 hi Pmenu        guifg=#121212   guibg=#b2b2b2   ctermfg=233    ctermbg=249       gui=none      cterm=none
 hi PmenuSel     guifg=fg        guibg=#585858   ctermfg=fg     ctermbg=240       gui=none      cterm=none
 hi PMenuSbar    guifg=#121212   guibg=#c6c6c6   ctermfg=233    ctermbg=251       gui=none      cterm=none
@@ -100,3 +124,13 @@ hi WarningMsg   guifg=#d7af87   guibg=NONE      ctermfg=180    ctermbg=NONE     
 hi WildMenu     guifg=NONE      guibg=#005f87   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
 hi ColorColumn  guifg=NONE      guibg=#303030   ctermfg=NONE   ctermbg=236       gui=none      cterm=none
 hi Ignore       guifg=bg                        ctermfg=bg
+
+" HTML 
+"doctype
+highlight htmlComment          guifg=#add8e6    guibg=none    gui=none
+highlight Title          guifg=#ededed   gui=bold
+" hi htmlString guifg=lightred gui=NONE
+" hi htmlArg guifg=#b9f7c2 gui=NONE
+" hi htmlTagName guifg=#fff7bb gui=NONE
+
+
