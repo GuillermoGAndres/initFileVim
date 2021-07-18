@@ -491,7 +491,8 @@ endfunc
 "-------------------
 " colorscheme af
 " colorscheme simple-dark
-colorscheme church
+" colorscheme church
+colorscheme darkAtom
 set cursorline
 
 " Vim auto line-break
@@ -567,7 +568,8 @@ autocmd FileType html,css,php EmmetInstall
 " nnoremap <silent> <Esc><Esc> :let @/=""<CR>
 " http://vimdoc.sourceforge.net/htmldoc/pattern.html#last-pattern
 " nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
-nnoremap <Esc><Esc> :noh<CR>
+" nnoremap <Esc><Esc> :noh<CR>
+nnoremap <leader><CR> :noh<CR>
 
 " Para seleccionar el conent de una etiqueta
 " vit, con viw seleccionar una word, usando c operator delete e insert
@@ -582,4 +584,5 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-
+" List buffers 
+nnoremap <Leader>b :ls<CR>:b<Space>
