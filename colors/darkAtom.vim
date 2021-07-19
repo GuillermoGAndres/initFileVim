@@ -93,9 +93,11 @@ hi CursorLine   guifg=NONE      guibg=#2b2b2b   ctermfg=NONE   ctermbg=238      
 " hi Visual       guifg=NONE      guibg=#005f87   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
 hi Visual       guifg=NONE      guibg=#3c3f42   ctermfg=NONE   ctermbg=24        gui=none      cterm=none
 hi VisualNOS    guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=underline cterm=underline
-hi IncSearch    guifg=bg        guibg=#87d7ff   ctermfg=bg     ctermbg=123       gui=none      cterm=none
-hi Search       guifg=bg        guibg=#ffd787   ctermfg=bg     ctermbg=221       gui=none      cterm=none
-
+"hi IncSearch    guifg=bg        guibg=#87d7ff   ctermfg=bg     ctermbg=123       gui=none      cterm=none
+hi IncSearch    guifg=NONE      guibg=#555555   ctermfg=bg     ctermbg=123       gui=none      cterm=none
+hi Search       guifg=NONE      guibg=#555555   ctermfg=bg     ctermbg=221       gui=none      cterm=none
+"hi Search       guifg=bg        guibg=#ffd787   ctermfg=bg     ctermbg=221       gui=none      cterm=none
+ 
 " UI
 " #121212 -> fg 
 " #b2b2b2 -> #202020
@@ -157,4 +159,8 @@ hi htmlTag guifg=#8db7eb   gui=NONE
 hi htmlEndTag guifg=#8db7eb   gui=NONE
 hi htmlComment	guifg=#8a8a8a   gui=NONE
 
+hi cssUnitDecorators	guifg=fg   gui=NONE
 
+" Multicursor
+" hi MultiCursor    guifg=NONE        guibg=#005f87      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
+let g:VM_Mono_hl   = 'Visual'

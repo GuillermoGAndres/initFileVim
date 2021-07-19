@@ -30,6 +30,50 @@ C-u : undo
 Term
 vnew | term     :- terminal vertical
 new | term      :- horizontal vertical
+
+
+Edicion 
+e: editar file 
+sp: split edition 
+vsp: vertical edition
+ls : list buffers
+bd: Delete buffer 
+b [1..9]: Switch buffer 
+
+Text 
+viw: Select all word
+vit: Select content tag
+c{motion}: delete and start insert-mode
+~: upper or lower case
+* : Select string a buscar
+C-a: Increment value +1
+C-x: Decrement value -1
+gf: Find file (below file)
+
+{Visual}U : Make highlighted text uppercase
+{Visual}u : Make highlighted text uppercase
+gU{motion}: Uppercase
+gu{motion}: lowercase
+gUU: Make current line Uppercase 
+guu: Make current line Uppercase 
+
+gn: Search last searh and start visul-mode
+. : dot operator remember last command
+Combinando c operador y gn y .
+cgn - n - . : Cambia cada ocurrencia 
+
+Windows
+C-w-q: Close window
+C-w-v: Vertial split window
+C-w-s: Split window
+C-w-o: Close all windows
+s-<up>: up page
+s-<down> : down page
+
+Tab 
+:tabe = edition tab
+:gt   = next tab 
+:tab sball = to change all buffers to tab view.
 ~~~
 
 ### Default font

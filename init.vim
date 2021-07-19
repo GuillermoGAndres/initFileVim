@@ -56,6 +56,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 " Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 
 "*Themes
@@ -147,7 +148,7 @@ nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>cc  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
@@ -255,7 +256,7 @@ set termguicolors "Activa true colors en la terminal utilizando guifg in vez de 
 "map <C-l> :NERDTreeToggle<CR>
 map <F12> :NERDTreeToggle<CR>
 "map <F11> :Explore<CR>
-map <C-x><C-f> :Sexplore<CR> 
+" map <C-x><C-f> :Sexplore<CR> 
 "map <C-x><C-Right> :Vexplore<CR> 
 
 "map <C-b> :NERDTreeToggle<CR>
@@ -290,18 +291,26 @@ let g:mapleader = ' '  " Definir espacio como la tecla líder
 "Guardar con <líder> + s
 "nnoremap <leader>s :w<CR> 
 "nnoremap <leader>x :q!<CR>
-nnoremap <leader>c :q!<CR>
+" nnoremap <leader>c :q!<CR>
 nnoremap <leader>w :w<CR>
 
 "----- Management buffers ------------
-nnoremap <C-x><Left> :bprevious<CR>
-nnoremap <C-x><Right> :bnext<CR>
+" nnoremap <C-x><Left> :bprevious<CR>
+" nnoremap <C-x><Right> :bnext<CR>
 
-nnoremap <C-x>l :bnext<CR>
-nnoremap <C-x>h :bprevious<CR>
+nnoremap <leader><Left> :bprevious<CR>
+nnoremap <leader><Right> :bnext<CR>
+" nnoremap <leader>d :bd<CR>
+" %a for current
+" h for hidden
+" # for previous
+" + for modified.
+
+" nnoremap <C-x>l :bnext<CR>
+" nnoremap <C-x>h :bprevious<CR>
 
 "nnoremap <C-x><Up> :ls<CR> " Al paracer no funcino con Up y Down
-nnoremap <S-Up> :ls<CR>
+" nnoremap <S-Up> :ls<CR>
 
 " Moverse al buffer siguiente con <líder> + l
 nnoremap <leader>l :bnext<CR>
@@ -313,8 +322,8 @@ nnoremap <leader>q :bdelete<CR>
 "noremap <Leader>y "*y -
 
 "--------Management tab ----------
-"nnoremap <C-x><C-Left> :tabp<CR>                                                                            
-nnoremap <C-x><C-Right> :tabnext<CR>
+" nnoremap <C-x><C-Left> :tabp<CR>                                                                            
+" nnoremap <C-x><C-Right> :tabnext<CR>
 
 "Configurando el movimiento de los tab para sea mas facil en vez de utilar gt 
 "nnoremap <C-Left> :tabprevious<CR>                                                                            
