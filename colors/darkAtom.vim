@@ -57,12 +57,14 @@ set background=dark
 " foregraund: 
 " azul: #a2caeb, #8db7eb
 " amarillo: #eedfad   
-" naranga: 
+" naranga: #ffccb4
 " morado: #b7b8e6   
 " comentarios: #8a8a8a   
 " numbers: 
 " hline: 
 
+" Type : morado 
+" Identifier verde
 
 " General Colors
 " #1B1C1F or #1d1e21
@@ -158,9 +160,25 @@ hi htmlTag guifg=#8db7eb   gui=NONE
 "hi htmlTagN guifg=#8db7eb   gui=NONE
 hi htmlEndTag guifg=#8db7eb   gui=NONE
 hi htmlComment	guifg=#8a8a8a   gui=NONE
-
 hi cssUnitDecorators	guifg=fg   gui=NONE
+hi cssBraces	guifg=fg   gui=NONE
+hi cssAttributeSelector	guifg=#afd7d7   gui=NONE
+hi cssSelectorOp guifg=fg   gui=NONE
+hi cssSelectorOp2 guifg=fg   gui=NONE
+hi cssCustomProp guifg=fg   gui=NONE
+" hi cssFontAttr guifg=#afd7d7   gui=NONE
+hi! link cssFontAttr Identifier
 
 " Multicursor
-" hi MultiCursor    guifg=NONE        guibg=#005f87      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
 let g:VM_Mono_hl   = 'Visual'
+
+" Coc #ff8787
+hi CocErrorSign	guifg=#ff8181   gui=NONE
+
+
+" References 
+" Enlazar con otro highlight
+" http://net.cmed.us/Home/unixlinux/vim/syntax-highlighting
+" https://stackoverflow.com/questions/31145592/vim-syntax-highlighting-hi-def-link-changes-colors-for-certain-mappings
+" https://gist.github.com/amaxwell01/4028475 (Template)
+" https://stackoverflow.com/questions/26958070/how-do-i-link-highlighting-groups-in-a-vim-colour-scheme

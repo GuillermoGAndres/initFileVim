@@ -5,3 +5,14 @@ snippet mq "Crea un media query"
 	$0
 }
 endsnippet
+
+snippet box_s "Adjust box-sizing estandar" b
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+endsnippet

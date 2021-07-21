@@ -268,9 +268,9 @@ imap <C-n> <ESC>
 nnoremap <C-s> :w<CR> 
 " Quit discarding changes
 " inoremap <C-q> <esc>:qa!<cr>               
-nnoremap zz :q<cr>
+" nnoremap zz :q<cr> (Se sobre escribe con :h zz)
 " La 'a' significa all buffers 
-nnoremap zq :qa!<cr>
+" nnoremap zq :qa!<cr>
 
 "nnoremap <C-x> :w<CR>
 "Salir sin guardad
@@ -282,7 +282,7 @@ nnoremap zq :qa!<cr>
 "Salir foruce brute
 "nmap <C-c> :q!<CR>
 
-inoremap jk <esc>
+" inoremap jk <esc> (Uso mejor C-c el por default)
 "------------------------------  
 
 "Definir la letra leader
@@ -595,3 +595,13 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " List buffers 
 nnoremap <Leader>b :ls<CR>:b<Space>
+
+function! SurroundMe()
+    let cara = escape(nr2char(getchar()), '/\\^$*.[~')
+    let col = col('.')
+    exe 's/.*\zs\<.\{-}\%#.\{-}\>/'.cara.'&'.cara.'/'
+    call setpos('.', [0, line('.'), col + 1, 0])
+endfunction
+
+nnoremap <leader>' :call SurroundMe()<CR>
+" https://vi.stackexchange.com/questions/21113/vimscript-surround-word-under-cursor-with-quotes
