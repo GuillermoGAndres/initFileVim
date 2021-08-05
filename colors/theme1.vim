@@ -14,7 +14,7 @@
 " Ruby with tagbar: http://imgur.com/NzPwu.png
 
 " -----------------------------------------------------------------------------
-" Name:         Church theme for vim
+" Name:         Liskvo theme for vim
 " Description:  A Dark Vim Colorscheme
 " Author:       Guillermo Andres <memocampeon35@gmail.com>
 " Website:      https://github.com/GuillermoGAndres
@@ -49,32 +49,25 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name="dartAtom"
+let colors_name="theme1"
 set background=dark
 
 " Peleta de colores 
-" background:
-" foregraund: 
-" azul: #a2caeb, #8db7eb
-" amarillo: #eedfad   
-" naranga: #ffccb4
-" morado: #b7b8e6   
-" comentarios: #8a8a8a   
-" numbers: 
-" hline: 
-
-" Type : morado 
-" Identifier verde
+" background:   #010001  
+" foregraund:   #e0dfe1
+" amarillo:     #f2f2ef
+" verde:        #b2cdbd
+" morado:       #d2b8d6
+" azul:         #70909e
 
 " General Colors
 " #1B1C1F or #1d1e21
-hi Normal       guifg=#d7d7d7   guibg=#1d1e21  ctermfg=251    ctermbg=235       gui=none      cterm=none
+hi Normal       guifg=#e0dfe1   guibg=#010001  ctermfg=251    ctermbg=235       gui=none      cterm=none
 hi Comment      guifg=#8a8a8a   guibg=NONE      ctermfg=245    ctermbg=NONE      gui=italic      cterm=none
-hi Constant     guifg=#eedfad   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
-" #add8e6 or #93CFE3   
-hi Statement    guifg=#93c4ff   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
+hi Constant     guifg=#d2b8d6   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
+hi Statement    guifg=#f2f2ef   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
 hi PreProc      guifg=#87afd7   guibg=NONE      ctermfg=110    ctermbg=NONE      gui=none      cterm=none
-hi Type         guifg=#b7b8e6   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
+hi Type         guifg=#b2cdbd   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
 hi Identifier   guifg=#afd7d7   guibg=NONE      ctermfg=152    ctermbg=NONE      gui=none      cterm=none
 hi Special      guifg=#d7d7af   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
 
@@ -170,7 +163,7 @@ hi cssCustomProp guifg=fg   gui=NONE
 hi! link cssFontAttr Identifier
 
 " Multicursor
-let g:VM_Mono_hl   = 'Visual'
+" let g:VM_Mono_hl   = 'Visual'
 
 " Coc #ff8787
 "hi CocErrorSign	guibg=#3c3f42   gui=NONE

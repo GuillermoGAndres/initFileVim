@@ -47,16 +47,24 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     " Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
-    Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
+    " Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
 "{{ Development } }
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
+" Plug 'GuillermoGAndres/emmet-vim'
+Plug 'zubairakram/emmet-vim/', {'branch': 'html5-snippet'}
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-commentary'
 " Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'tommcdo/vim-exchange'
+"
+" https://stackoverflow.com/questions/48721114/is-there-a-vim-command-that-swap-two-words-with-crossing-one-operator
+
+" Plug 'ctrlpvim/ctrlp.vim'
 
 
 "*Themes
@@ -490,7 +498,8 @@ nnoremap <f6> :OpenTerminal<CR>
 "colorscheme liskov
 
 "---Conocer el grupo de sintaxis que pertenece----
-nmap <C-S-P> :call <SID>SynStack()<CR>
+" nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <C-A-p> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
     if !exists("*synstack")
         return
@@ -498,11 +507,11 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 "-------------------
-" colorscheme af
+colorscheme af
 " colorscheme simple-dark
 " colorscheme church
-colorscheme darkAtom
-set cursorline
+" colorscheme darkAtom
+" set cursorline
 
 " Vim auto line-break
 set textwidth=79
@@ -559,8 +568,8 @@ let g:user_emmet_leader_key=','
 "   endif
 "   return "\<c-y>,"
 " endfunction
-
 " autocmd FileType html imap <buffer><silent><expr><tab> <sid>zen_html_tab()
+
 " http://bling.github.io/blog/2013/07/21/smart-tab-expansions-in-vim-with-expression-mappings/
 
 "Enable just for html/css
@@ -586,22 +595,28 @@ nnoremap <leader><CR> :noh<CR>
 
 " Move line up and down 
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" nnoremap <A-j> :m .+1<CR>==
+" nnoremap <A-k> :m .-2<CR>==
+" inoremap <A-j> <Esc>:m .+1<CR>==gi
+" inoremap <A-k> <Esc>:m .-2<CR>==gi
+" vnoremap <A-j> :m '>+1<CR>gv=gv
+" vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" A : alt 
+" S : Shift
+" nnoremap <A-Up> :m-2<CR>
+" nnoremap <A-Down> :m+<CR>
+" inoremap <A-Up> <Esc>:m-2<CR>
+" inoremap <A-Down> <Esc>:m+<CR>
 " List buffers 
 nnoremap <Leader>b :ls<CR>:b<Space>
 
-function! SurroundMe()
-    let cara = escape(nr2char(getchar()), '/\\^$*.[~')
-    let col = col('.')
-    exe 's/.*\zs\<.\{-}\%#.\{-}\>/'.cara.'&'.cara.'/'
-    call setpos('.', [0, line('.'), col + 1, 0])
-endfunction
+" function! SurroundMe()
+"     let cara = escape(nr2char(getchar()), '/\\^$*.[~')
+"     let col = col('.')
+"     exe 's/.*\zs\<.\{-}\%#.\{-}\>/'.cara.'&'.cara.'/'
+"     call setpos('.', [0, line('.'), col + 1, 0])
+" endfunction
 
-nnoremap <leader>' :call SurroundMe()<CR>
+" nnoremap <leader>' :call SurroundMe()<CR>
 " https://vi.stackexchange.com/questions/21113/vimscript-surround-word-under-cursor-with-quotes

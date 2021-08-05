@@ -162,5 +162,7 @@ hi CursorLine     guifg=none guibg=#201f20
 " ---------- python --------------------------------
 highlight pythonSpaceError          guibg=#3c3f42   gui=NONE
 
+" --- popup-------------------------
+hi Pmenu        guifg=fg   guibg=#202020 ctermfg=233    ctermbg=249       gui=none      cterm=none
 
 "vim: sw=4

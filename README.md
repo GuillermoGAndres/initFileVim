@@ -15,6 +15,9 @@ Para el plugin de coc.vim necesitas instalar nodejs:
 
 # Guide vim
 ~~~
+
+[registro]<operador>[contador|movimiento]<objeto>
+
 q: quit
 w : save
 qw: save and quit
@@ -39,6 +42,18 @@ vsp: vertical edition
 ls : list buffers
 bd: Delete buffer 
 b [1..9]: Switch buffer 
+
+Insert mode 
+C-t : Insert one shiftwidth of indent at the start of the current line.
+C-d : Delete one shiftwidth of indent at the start of the current line.
+
+See :h i_Ctrl-t 
+
+Insertar los mismo en varias columnas
+C-V : Column mode 
+S-v : Line mode 
+
+C-v [count]<down> S-i "Escribes algo" <ESC>
 
 Text 
 viw: Select all word
@@ -168,3 +183,8 @@ Tab
 Droid Sans Mono
 ![Linked java](./img/2LinkedQueueJava.png)
 
+
+Buenas referencias
+https://codingornot.com/03-vim-edicion-inteligente
+https://codingornot.com/09-vim-registros
+https://codingornot.com/10-vim-macros
