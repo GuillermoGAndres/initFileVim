@@ -112,9 +112,9 @@ hi PmenuSel     guifg=fg        guibg=#585858   ctermfg=fg     ctermbg=240      
 hi PMenuSbar    guifg=#121212   guibg=#c6c6c6   ctermfg=233    ctermbg=251       gui=none      cterm=none
 hi PMenuThumb   guifg=fg        guibg=#767676   ctermfg=fg     ctermbg=243       gui=none      cterm=none
 
-" hi StatusLine   guifg=#121212   guibg=#b2b2b2   ctermfg=233    ctermbg=249       gui=none      cterm=none
-" hi StatusLineNC guifg=#121212   guibg=#767676   ctermfg=233    ctermbg=243       gui=none      cterm=none
-hi StatusLine   guifg=fg   guibg=#292929    ctermfg=233    ctermbg=249       gui=none      cterm=none
+hi StatusLine   guifg=#121212   guibg=#b2b2b2   ctermfg=233    ctermbg=249       gui=bold      cterm=none
+"hi StatusLineNC guifg=#121212   guibg=#767676   ctermfg=233    ctermbg=243       gui=none      cterm=none
+"hi StatusLine   guifg=fg   guibg=#292929    ctermfg=233    ctermbg=249       gui=none      cterm=none
 hi StatusLineNC guifg=fg   guibg=bg  ctermfg=233    ctermbg=243       gui=none      cterm=none
 
 hi TabLine      guifg=fg   guibg=bg   ctermfg=233    ctermbg=249       gui=none      cterm=none

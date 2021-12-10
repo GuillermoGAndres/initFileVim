@@ -29,21 +29,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Coc servers
 "{{ The Basics }}
     " Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
-    Plug 'frazrepo/vim-rainbow'
+    "Plug 'frazrepo/vim-rainbow'
 "{{ File management }}
-    Plug 'vifm/vifm.vim'                               " Vifm
-    Plug 'scrooloose/nerdtree'                         " Nerdtree
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
-    Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
+    "Plug 'vifm/vifm.vim'                               " Vifm
+    "Plug 'scrooloose/nerdtree'                         " Nerdtree
+    "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
+    "Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
 "{{ Productivity }}
-    Plug 'vimwiki/vimwiki'                             " VimWiki 
-    Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
+    "Plug 'vimwiki/vimwiki'                             " VimWiki 
+    "Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
 "{{ Tim Pope Plugins }}
-    Plug 'tpope/vim-surround'                          " Change surrounding marks
+    "Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
 "    Plug 'PotatoesMaster/i3-vim-syntax'                " i3 config highlighting 
 "    Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting resalta indentacion
-    Plug 'vim-python/python-syntax'                    " Python highlighting
+    "Plug 'vim-python/python-syntax'                    " Python highlighting
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     " Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -279,6 +279,11 @@ nnoremap <C-s> :w<CR>
 " nnoremap zz :q<cr> (Se sobre escribe con :h zz)
 " La 'a' significa all buffers 
 " nnoremap zq :qa!<cr>
+" <S-Z-Z> - Guarda y sale
+" <S-Z-Q> - Sale sin guardar
+" <C-c>   - normal mode
+
+" S shift
 
 "nnoremap <C-x> :w<CR>
 "Salir sin guardad
@@ -507,10 +512,10 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 "-------------------
-colorscheme af
+" colorscheme af
 " colorscheme simple-dark
 " colorscheme church
-" colorscheme darkAtom
+colorscheme darkAtom
 " set cursorline
 
 " Vim auto line-break
